@@ -20,6 +20,7 @@
 \theoremstyle{definition}
 \newtheorem{defn}{Определение}[section]
 \newtheorem{example}{Пример}[section]
+\newtheorem{state}{Утверждение}[section]
 
 \definecolor{linkcolor}{HTML}{0000FF}
 \definecolor{urlcolor}{HTML}{0000FF}
@@ -121,6 +122,31 @@
 
 \section {Алгебраическая интерполяция. Многочлен Лагранжа.}
 	\hyperlink {lects.15}{Лекции}\\
+	Отрезок $[a,b]$ разбит на $n$ узлов $a = x_1 < x_2 < ... < x_n = b$ и в них заданы $f_i$ - значения функции $f$ в $x_i$. Требуется найти многочлен $L_{n-1}(x)$ степени $n - 1$ чтоб $L_{n - 1}(x_i) = f_i$.
+
+	\textbf{Многочлен Лагранжа $L_{n - 1}(x)$}
+	$$
+		\begin {array}{lr}
+		L_{n - 1}(x) = \sum\limits_{i = 1}^{n} f_i \Phi_i (x), & \Phi_i(x) = \prod\limits_{j = 1, j\ne i}^{n} \frac{x-x_j}{x_i - x_j} \\
+		\end {array}
+	$$
+
+	\begin{state}
+		(\hyperlink {lects.16}{Лекции})Пусть n-я производная функции $f(x)$ непрерывна на $[a,b]$, тогда $\forall x \in [a,b] \ \  \exists \xi \in [a,b]$, что справедливо
+		$$
+			\begin{array}{lr}
+			f(x) - L_{n-1}(x) = \frac {f^{(n)}(\xi)}{n!} \omega_n(x), & \omega_n(x) = \prod\limits_{i - 1}^{n}(x-x_i)
+			\end{array}
+		$$
+	\end{state}
+	Следствие:
+	$$
+		||f(x) - L_{n-1}(x) || \le \frac{||f^{(n)}(x)||}{n!} ||\omega_n||
+	$$
+	$$
+		||g(x)|| = \underset{x\in [a,b]}{sup} |g(x)|
+	$$
+
 
 \section {Константа Лебега интерполяционного процесса для равноотстоящих узлов.}
 	\hyperlink {lects.17}{Лекции}\\
