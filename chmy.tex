@@ -150,6 +150,23 @@
 
 \section {Константа Лебега интерполяционного процесса для равноотстоящих узлов.}
 	\hyperlink {lects.17}{Лекции}\\
+	\textbf{Константа Лебега интерполяционного процесса}(\hyperlink {lects.17}{Подробно})
+	$$
+		\begin{array}{lr}
+		\lambda_n = \underset{x\in [a,b]}{max} \sum\limits_{i = 1}^n |\Phi_i(x)|, & \Phi_i(x) = \prod\limits_{j = 1, j\ne i}^{n} \frac{x-x_j}{x_i - x_j} \\
+		\end{array}
+	$$
+	
+	\begin{state}
+	$\lambda_n$ не зависит от длины отрезка интерполяции (\hyperlink {lects.17}{Утверждение 1})
+	\end{state}
+	
+	Оценка снизу  для $\lambda_n (n \ge 2)$ (\hyperlink {lects.17}{Утверждение 2})
+	$$
+		\lambda \ge K \frac {2^n}{n^{3/2}}, 
+	$$ 
+	где $K$ не зависит от $n$. \\
+	
 
 \section {Многочлены Чебышёва и их свойства.}
 	\hyperlink {lects.18}{Лекции}\\
