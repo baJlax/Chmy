@@ -123,12 +123,18 @@
         \lambda_n = \underset{x\in [a,b]}{max} \sum\limits_{i = 1}^n |\Phi_i(x)|, & \Phi_i(x) = \prod\limits_{j = 1, j\ne i}^{n} \frac{x-x_j}{x_i - x_j} \\
         \end{array}
     $$
+    \textbf{Нужна она в оценке:}
+    $$
+        \begin{array}{lr}
+        ||L_{n-1} - L_{n-1}^*|| \le \varepsilon ||f(x)|| \lambda_n \\
+        \end{array}
+    $$
     
     \begin{state} (\hyperlink {lects.17}{Утверждение 1})\\
-    $\lambda_n$ не зависит от длины отрезка интерполяции.
+    $\lambda_n$ при растягивании отрезка (и разбиения в том числе) не зависит от длины отрезка интерполяции.
     \end{state}
     
-    \noindent \hyperlink{lects.17}{Утверждение 2.} (Оценка снизу для $\lambda_n\,(n\ge 2)$)
+    \noindent \hyperlink{lects.17}{Утверждение 2.} (Оценка снизу для $\lambda_n\,(n\ge 2)$ для равноотстоящих узлов)
     $$
         \lambda \ge K \frac {2^n}{n^{3/2}}, 
     $$ 
