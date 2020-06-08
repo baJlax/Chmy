@@ -1238,6 +1238,45 @@ $x^{n+1} - x^n = -[F'(x^0)]^{-1}F(x^n)$ \\
 
 \section {Система уравнений в методе конечных элементов.}
     \hyperlink {lects.106}{Лекции}\\
+    Хотим получить явный вид системы уравнений метода конечных элементов для одномерного случая при равномерном разбиении отрезка $[0,1]$ с кусочно-линейными базисными фунциями при постоянных $k(x) \equiv k$ и $p(x) \equiv p > 0$.\\
+    $a_{ij}$ вычисляются явно:
+    $$
+        a_{ij} = a_(\varphi_i, \varphi_j) = \int_0^1\left[k(x) \frac{d \varphi_i}{dx} \frac{d \varphi_j}{dx} + p(x) \varphi_i \varphi_j\right]dx =
+    $$
+    $$
+        =
+        \left\{
+        \begin{aligned}
+            & - \frac{k}{h} + \frac{ph}{6} \text{, при } i =j-1,\\
+            & \frac{2k}{h} + \frac{2ph}{3} \text{, при } i =j,\\
+            & - \frac{k}{h} + \frac{ph}{6} \text{, при } i =j+1,\\
+            & 0 \text{, иначе.}
+        \end{aligned}
+        \right.
+    $$
+    $b_{j} = \int\limits_{x_{j-1}}^{x_{j+1}} f \varphi_j dx$ -- явно не вычисляется, поэтому заменяем $f$ приближением:
+    $$
+        \begin{aligned}
+            & f_I(x) = \sum_0^n f(x_j) \varphi_j(x) dx\\
+        \end{aligned}
+    $$
+    Получаем новые $\hat{b_j}$:
+    $$
+        \begin{aligned}
+            & \hat{b_j} = \int_{x_{j-1}}^{x_{j+1}} f_I(x) \varphi_j dx = h \frac{f(x_{j+1}) + 4f(x_j) + f(x_{j-1})}{6}\\
+        \end{aligned}
+    $$
+    с точностью $|b_j - \hat{b_j}| = O(h^3)$.
+    В итоге система принимает вид:
+    $$
+        \left\{
+        \begin{aligned}
+            & c_0 = 0,\\
+            & -k \frac{c_{j+1} - 2 c_j + c_{j-1}}{h} + ph \frac{c_{j+1} + 4 c_j + c_{j-1}}{6} = h \frac{f(x_{j+1}) - 2 f(x_j) + f(x_{j-1})}{6},\\
+            & k \frac{c_n - c_{n-1}}{h} + ph \frac{2c_n + c_{n-1}}{6} = h \frac{2f(x_n) + f(x_{n-1})}{6}.
+        \end{aligned}
+        \right.
+    $$
 
 \section {Решение модельной задачи методом Фурье.}
     \hyperlink {lects.108}{Лекции}\\
