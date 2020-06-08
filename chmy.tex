@@ -1265,7 +1265,7 @@ $$
     Хотим получить явный вид системы уравнений метода конечных элементов для одномерного случая при равномерном разбиении отрезка $[0,1]$ с кусочно-линейными базисными фунциями при постоянных $k(x) \equiv k$ и $p(x) \equiv p > 0$.\\
     $a_{ij}$ вычисляются явно:
     $$
-        a_{ij} = a_(\varphi_i, \varphi_j) = \int_0^1\left[k(x) \frac{d \varphi_i}{dx} \frac{d \varphi_j}{dx} + p(x) \varphi_i \varphi_j\right]dx =
+        a_{ij} = a(\varphi_i, \varphi_j) = \int_0^1\left[k(x) \frac{d \varphi_i}{dx} \frac{d \varphi_j}{dx} + p(x) \varphi_i \varphi_j\right]dx =
     $$
     $$
         =
@@ -1281,7 +1281,7 @@ $$
     $b_{j} = \int\limits_{x_{j-1}}^{x_{j+1}} f \varphi_j dx$ -- явно не вычисляется, поэтому заменяем $f$ приближением:
     $$
         \begin{aligned}
-            & f_I(x) = \sum_0^n f(x_j) \varphi_j(x) dx\\
+            & f_I(x) = \sum_{j = 0}^n f(x_j) \varphi_j(x) dx\\
         \end{aligned}
     $$
     Получаем новые $\hat{b_j}$:
