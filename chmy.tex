@@ -1422,10 +1422,11 @@ $$
     с точностью $|b_j - \hat{b_j}| = O(h^3)$.
     В итоге система принимает вид:
     $$
+        \small
         \left\{
         \begin{aligned}
             & c_0 = 0,\\
-            & -k \frac{c_{j+1} - 2 c_j + c_{j-1}}{h} + ph \frac{c_{j+1} + 4 c_j + c_{j-1}}{6} = h \frac{f(x_{j+1}) - 2 f(x_j) + f(x_{j-1})}{6},\\
+            & -k \frac{c_{j+1} - 2 c_j + c_{j-1}}{h} + ph \frac{c_{j+1} + 4 c_j + c_{j-1}}{6} = h \frac{f(x_{j+1}) - 2 f(x_j) + f(x_{j-1})}{6}, j = 1,...,n-1, \\
             & k \frac{c_n - c_{n-1}}{h} + ph \frac{2c_n + c_{n-1}}{6} = h \frac{2f(x_n) + f(x_{n-1})}{6}.
         \end{aligned}
         \right.
