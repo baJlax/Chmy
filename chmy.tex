@@ -1292,8 +1292,12 @@ $$
     \begin{center}
     $J(v) = \int^1_0 [k(x)(v'(x))^2 + p(x)v^2(x) - 2f(x)v(x)]dx$
     \end{center}
+    Но чаще мы будем писать $J(v) = a(v,v) - 2(f,v)$, где $a(v,u)$ называется \textit{энергетическим скалярным произведением}:
+    $$
+        a(v,u) = \int^1_0 [k(x)v'(x)u'(x) + p(x)v(x)u(x)]dx.
+    $$
     Подробнее об этом всем - \hyperlink {lects.97}{вся эта страница}\\
-    \hyperlink {lects.98}{Утверждение 1.} Пусть $u \in H$,  тогда справедливо
+    \hyperlink {lects.98}{Утверждение 1.} Пусть $u \in H = \{\upsilon(x): \int^1_0 [(v(x))^2 + (v'(x))^2] dx < \infty, \upsilon(0) = 0\}$,  тогда справедливо
     \begin{center}
     $\|u(x)\|^2_{L_2(0,1)} \leq \|u'(x)\|^2_{L_2(0,1)}$, т.е. $\int^1_0 u^2(x)dx \leq \int^1_0 (u'(x))^2dx$
     \end{center}
